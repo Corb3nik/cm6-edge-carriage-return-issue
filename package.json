@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@codemirror/state": "^6.2.0",
     "@codemirror/view": "^6.8.1",
     "vite": "^4.1.1"
   }

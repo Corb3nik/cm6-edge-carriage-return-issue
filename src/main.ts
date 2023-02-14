@@ -1,4 +1,5 @@
-import { EditorView } from "@codemirror/view";
+import { EditorView, lineNumbers } from "@codemirror/view";
+import { EditorState } from "@codemirror/state";
 import { createContent } from "./content";
 
 const app = document.getElementById("app");
@@ -8,6 +9,7 @@ window.editor = new EditorView({
   parent: app,
   doc: createContent(),
   extensions: [
+    lineNumbers(),
     EditorView.theme({
       "&": {
         "max-height":"500px"
@@ -17,7 +19,8 @@ window.editor = new EditorView({
         "background-color": "grey"
       }
     }),
-    EditorView.lineWrapping
+
+    EditorState.lineSeparator.of("\n"),
   ]
 });
 
